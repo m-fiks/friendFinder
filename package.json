@@ -18,6 +18,8 @@
   "homepage": "https://github.com/m-fiks/friendFinder#readme",
   "dependencies": {
     "body-parser": "^1.18.2",
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "nodemon": "^1.17.4",
+    "survey-jquery": "^1.0.20"
   }
 }

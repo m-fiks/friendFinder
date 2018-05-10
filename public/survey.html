@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder Survey</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://surveyjs.azureedge.net/1.0.20/survey.jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<h2>SURVEY</h2>
+<div id="surveyContainer"></div>
+
+
+<script>
+
+    Survey.Survey.cssType = "bootstrap";
+
+    const surveyJSON = {pages:[{name:"page1",elements:[{type:"dropdown",name:"question1",title:"You are almost never late to appointments",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question2",title:"You are more of a cat person",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question3",title:"You are a fan of La Croix (sparkling water)",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question4",title:"You think fitted sheets are unnecessary",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question5",title:"You find it difficult to speak loudly",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question6",title:"You have conflicting feelings about Grimes dating Elon Musk",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question7",title:"You floss your teeth before you brush them",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question8",title:"You procrastinate often",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question9",title:"You use Military Time",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question10",title:"Loki is still alive",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]}]}]}
+
+    //onCOMPLETE do this function
+    function sendDataToServer(survey) {
+        let currentURL = window.location.origin;
+        //send Ajax request to your web server.
+        $.ajax({url: currentURL +"/survey", method: "POST" })
+            .then(console.log('success'))
+        }
+
+    let survey = new Survey.Model(surveyJSON);
+
+    //displays survey questions
+    $("#surveyContainer").Survey({
+        model: survey,
+        onComplete: sendDataToServer
+    });
+
+
+</script>
+</body>
+</html>
