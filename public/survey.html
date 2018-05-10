@@ -26,12 +26,14 @@
         let currentURL = window.location.origin;
         //send Ajax request to your web server.
         $.ajax({url: currentURL +"/survey", method: "POST" })
-            .then(console.log('success'))
+        
+        //logs the survey results here    
+        .then(console.log(JSON.stringify(survey.data)))
         }
 
     let survey = new Survey.Model(surveyJSON);
 
-    //displays survey questions
+    //displays survey questions, second key to use for submit
     $("#surveyContainer").Survey({
         model: survey,
         onComplete: sendDataToServer

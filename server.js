@@ -4,14 +4,17 @@ const path = require('path');
 
 app = express();
 
-const PORT = 8080;
+const PORT = process.env.PORT || 8080;
+
+//bodyparser
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
+//require the routes
+require("./routing/htmlRoutes")(app);
 
 app.get('/', (req,res)=>{
     res.send('hello');
-})
-
-app.get('/survey', (req, res) =>{
-    res.sendFile(path.join(__dirname, "/public/survey.html"))
 })
 
 app.listen(PORT, () =>{
