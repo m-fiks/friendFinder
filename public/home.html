@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>FRIEND FINDER</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <!--header container jumbotron?-->
+<div class="container-fluid">
+    <div class="jumbotron jumbotron-fluid">
+        <h1>Find me a friend!</h1>
+        <p>Take the survey to begin a new friendship</p>
+        <button type="button" class ="btn btn-warning" id="surveybutton">Survey</button>
+    </div>
+</div>
+
+<script>
+    //bring user to survey when they click the button
+    $('#surveybutton').on("click", (e) =>{
+        e.preventDefault();
+        let currentlocation = window.location.origin;
+        currentlocation += "/survey";
+        location.replace(currentlocation);
+    })
+</script>
+
+</body>
+</html>

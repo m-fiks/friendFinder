@@ -14,7 +14,8 @@ app.use(bodyParser.json());
 require("./routing/htmlRoutes")(app);
 
 app.get('/', (req,res)=>{
-    res.send('hello');
+    res.sendFile(path.join(__dirname, "/public/home.html"));
+    
 })
 
 app.listen(PORT, () =>{
