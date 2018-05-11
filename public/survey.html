@@ -6,7 +6,6 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Friend Finder Survey</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-        <script src="https://surveyjs.azureedge.net/1.0.20/survey.jquery.min.js"></script>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
 <body>
@@ -20,32 +19,118 @@
     </div>
 </div>
 
-<div id="surveyContainer"></div>
+<div class="container" id="surveyContainer">
+    <h2>About You</h2>
+    <!--name and photo-->
 
+    <h2>Questions</h2>
+    <h4><strong>Question 1</strong></h4>
+    <p>You are almost never late to appointments.</p>
+    <select data-placeholder="" class="browser-default" id="question1">
+        <option value="">Choose an option</option>
+        <option value="1">1 (Strongly Disagree)</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h5><strong>Question 2</strong></h5>
+    <p>You are more of a cat person.</p>
+    <select data-placeholder="" class="browser-default" id="question2">
+            <option value="">Choose an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h5><strong>Question 3</strong></h5>
+    <p>You are a fan of La Croix (sparkling water).</p>
+    <select data-placeholder="" class="browser-default" id="question3">
+            <option value="">Choose an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h5><strong>Question 4</strong></h5>
+    <p>You think fitted sheets are unnecessary.</p>
+    <select data-placeholder="" class="browser-default" id="question4">
+            <option value="">Choose an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h5><strong>Question 5</strong></h5>
+    <p>You find it difficult to speak loudly.</p>
+    <select data-placeholder="" class="browser-default" id="question5">
+            <option value="">Choose an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h5><strong>Question 6</strong></h5>
+    <p>You have conflicting feelings about Grimes dating Elon Musk.</p>
+    <select data-placeholder="" class="browser-default" id="question6">
+            <option value="">Choose an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h5><strong>Question 7</strong></h5>
+    <p>You floss your teeth before you brush them.</p>
+    <select data-placeholder="" class="browser-default" id="question7">
+            <option value="">Choose an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h5><strong>Question 8</strong></h5>
+    <p>You procrastinate often.</p>
+    <select data-placeholder="" class="browser-default" id="question8">
+            <option value="">Choose an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h5><strong>Question 9</strong></h5>
+    <p>You use Military Time.</p>
+    <select data-placeholder="" class="browser-default" id="question9">
+            <option value="">Choose an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+    </select>
+    <h5><strong>Question 10</strong></h5>
+    <p>Loki is still alive.</p>
+    <select data-placeholder="" class="browser-default" id="question10">
+            <option value="">Choose an option</option>
+            <option value="1">1 (Strongly Disagree)</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5 (Strongly Agree)</option>
+    </select>
+</div>
+<br><br>
+<button type="button" class="btn btn-primary" id="submitButton">Submit My Responses! </button>
 
 <script>
 
-    Survey.Survey.cssType = "bootstrap";
-
-    const surveyJSON = {pages:[{name:"page1",elements:[{type:"dropdown",name:"question1",title:"You are almost never late to appointments",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question2",title:"You are more of a cat person",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question3",title:"You are a fan of La Croix (sparkling water)",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question4",title:"You think fitted sheets are unnecessary",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question5",title:"You find it difficult to speak loudly",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question6",title:"You have conflicting feelings about Grimes dating Elon Musk",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question7",title:"You floss your teeth before you brush them",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question8",title:"You procrastinate often",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question9",title:"You use Military Time",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]},{type:"dropdown",name:"question10",title:"Loki is still alive",choices:[{value:"item1",text:"1 (Strongly Disagree)"},{value:"item2",text:"2"},{value:"item3",text:"3"},{value:"item4",text:"4"},{value:"item5",text:"5 (Strongly Agree)"}]}]}]}
-
-    //onCOMPLETE do this function
-    function sendDataToServer(survey) {
-        let currentURL = window.location.origin;
-        //send Ajax request to your web server.
-        $.ajax({url: currentURL +"/survey", method: "POST" })
-
-        //logs the survey results here    
-        .then(console.log(JSON.stringify(survey.data)))
-        }
-
-    let survey = new Survey.Model(surveyJSON);
-
-    //displays survey questions, second key to use for submit
-    $("#surveyContainer").Survey({
-        model: survey,
-        onComplete: sendDataToServer
-    });
+  
 
 
 </script>

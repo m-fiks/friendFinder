@@ -1,6 +1,10 @@
 const path = require('path');
+const bodyParser = require('body-parser');
 
 module.exports = (app) => {
+
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
 
 //send survey to page
 app.get('/survey', (req, res) =>{
@@ -9,7 +13,7 @@ app.get('/survey', (req, res) =>{
 
 //grab survey results
 app.post('/survey', (req, res) => {
-    console.log(req.body)
+    console.log((req))
 })
 
 };

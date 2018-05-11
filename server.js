@@ -15,7 +15,6 @@ require("./routing/htmlRoutes")(app);
 
 app.get('/', (req,res)=>{
     res.sendFile(path.join(__dirname, "/public/home.html"));
-    
 })
 
 app.listen(PORT, () =>{
