@@ -15,7 +15,8 @@ app.get('/api/survey', (req,res) => {
 
 //get survey data
 app.post('/api/survey', (req,res)=>{
-   console.log(req.body);
+   let newFriend = req.body;
+   array.push(newFriend);
 })
 
 };

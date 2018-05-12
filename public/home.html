@@ -18,12 +18,27 @@
     </div>
 </div>
 
+
+<button type="button" class="btn btn-info" id="API">API List</button>
+<button type="button" class="btn btn-info" id="gh">GitHub Repo</button>
+
+
+
 <script>
+
     //bring user to survey when they click the button
     $('#surveybutton').on("click", (e) =>{
         e.preventDefault();
         let currentlocation = window.location.origin;
         currentlocation += "/survey";
+        location.replace(currentlocation);
+    })
+
+    //bring user to api list
+    $('#API').on("click", (e) => {
+        e.preventDefault();
+        let currentlocation = window.location.origin;
+        currentlocation += "/api/survey";
         location.replace(currentlocation);
     })
 </script>
