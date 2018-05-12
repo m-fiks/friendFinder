@@ -22,6 +22,25 @@
 <div class="container" id="surveyContainer">
     <h2>About You</h2>
     <!--name and photo-->
+    
+        <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="nameInput">Enter your name</span>
+        </div>
+        <input type="text" id="userName" class="form-control" aria-label="name" aria-describedby="nameInput">
+      </div>
+
+        <br>
+
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text">Upload a Photo of Yourself</span>
+        </div>
+        <div class="custom-file">
+          <input type="file" class="custom-file-input" id="photoUpload">
+          <label class="custom-file-label" for="photoUpload">Click 'choose file' button to upload file</label>
+        </div>
+      </div>
 
     <h2>Questions</h2>
     <h4><strong>Question 1</strong></h4>
@@ -133,7 +152,8 @@
 //get user values
 $("#submitButton").on("click", () =>{
         let answers = {
-                name: "test",
+                name: $('#userName').val(),
+                photo: $('#photoUpload').val(),
                 questions: [
                         $('#question1').val(),
                         $('#question2').val(),
