@@ -130,6 +130,31 @@
 
 <script>
 
+//get user values
+$("#submitButton").on("click", () =>{
+        let answers = {
+                name: "test",
+                questions: [
+                        $('#question1').val(),
+                        $('#question2').val(),
+                        $('#question3').val(),
+                        $('#question4').val(),
+                        $('#question5').val(),
+                        $('#question6').val(),
+                        $('#question7').val(),
+                        $('#question8').val(),
+                        $('#question9').val(),
+                        $('#question10').val()
+                ]
+        }
+        //console.log(answers);
+        $.post('/api/survey', answers)
+        .done((data) => {
+                console.log(data);
+        })
+})
+
+
   
 
 

@@ -12,10 +12,7 @@ app.use(bodyParser.json());
 
 //require the routes
 require("./routing/htmlRoutes")(app);
-
-app.get('/', (req,res)=>{
-    res.sendFile(path.join(__dirname, "/public/home.html"));
-})
+require("./routing/apiRoutes")(app);
 
 app.listen(PORT, () =>{
     console.log(`server started at port: ${PORT}`)
