@@ -45,7 +45,7 @@
     <h2>Questions</h2>
     <h4><strong>Question 1</strong></h4>
     <p>You are almost never late to appointments.</p>
-    <select data-placeholder="" class="browser-default" id="question1">
+    <select class="selectpicker" data-placeholder="" id="question1">
         <option value="">Choose an option</option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -55,7 +55,7 @@
     </select>
     <h5><strong>Question 2</strong></h5>
     <p>You are more of a cat person.</p>
-    <select data-placeholder="" class="browser-default" id="question2">
+    <select class="selectpicker" data-placeholder="" id="question2">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -65,7 +65,7 @@
     </select>
     <h5><strong>Question 3</strong></h5>
     <p>You are a fan of La Croix (sparkling water).</p>
-    <select data-placeholder="" class="browser-default" id="question3">
+    <select class="selectpicker" data-placeholder="" id="question3">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -75,7 +75,7 @@
     </select>
     <h5><strong>Question 4</strong></h5>
     <p>You think fitted sheets are unnecessary.</p>
-    <select data-placeholder="" class="browser-default" id="question4">
+    <select class="selectpicker" data-placeholder="" id="question4">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -85,7 +85,7 @@
     </select>
     <h5><strong>Question 5</strong></h5>
     <p>You find it difficult to speak loudly.</p>
-    <select data-placeholder="" class="browser-default" id="question5">
+    <select class="selectpicker" data-placeholder="" id="question5">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -95,7 +95,7 @@
     </select>
     <h5><strong>Question 6</strong></h5>
     <p>You have conflicting feelings about Grimes dating Elon Musk.</p>
-    <select data-placeholder="" class="browser-default" id="question6">
+    <select class="selectpicker" data-placeholder="" id="question6">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -105,7 +105,7 @@
     </select>
     <h5><strong>Question 7</strong></h5>
     <p>You floss your teeth before you brush them.</p>
-    <select data-placeholder="" class="browser-default" id="question7">
+    <select class="selectpicker" data-placeholder="" id="question7">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -115,7 +115,7 @@
     </select>
     <h5><strong>Question 8</strong></h5>
     <p>You procrastinate often.</p>
-    <select data-placeholder="" class="browser-default" id="question8">
+    <select class="selectpicker" data-placeholder="" id="question8">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -125,7 +125,7 @@
     </select>
     <h5><strong>Question 9</strong></h5>
     <p>You use Military Time.</p>
-    <select data-placeholder="" class="browser-default" id="question9">
+    <select class="selectpicker" data-placeholder="" id="question9">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -135,7 +135,7 @@
     </select>
     <h5><strong>Question 10</strong></h5>
     <p>Loki is still alive.</p>
-    <select data-placeholder="" class="browser-default" id="question10">
+    <select class="selectpicker" data-placeholder="" id="question10">
             <option value="">Choose an option</option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -150,7 +150,8 @@
 <script>
 
 //get user values
-$("#submitButton").on("click", () =>{
+$("#submitButton").on("click", (e) =>{
+        e.preventDefault();
         let answers = {
                 name: $('#userName').val(),
                 photo: $('#photoUpload').val(),
@@ -168,8 +169,11 @@ $("#submitButton").on("click", () =>{
                 ]
         }
         //console.log(answers);
-        $.post('/api/survey', answers)
-        .done((data) => {
+        $.ajax({
+                type: "POST",
+                url: "/api/survey",
+                data: answers
+        }).then((data) => {
                 console.log(data);
         })
 })
