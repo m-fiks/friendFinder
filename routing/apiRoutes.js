@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const getClosest = require("get-closest");
 
 let friendArray = require('../data/friendos.js');
+// console.log(friendArray);
 
 module.exports = (app) => {
 
@@ -17,11 +18,10 @@ app.get('/api/friends', (req,res) => {
 app.post('/api/survey', (req,res)=>{
    //get user input
    let userInput = req.body;
-
+   console.log(userInput)
    //target questions and convert to integers
    let userResp = userInput.questions;
-   //let newArray = newQuest.map(elem => parseInt(elem));
-
+   
    let bestMatch = {
     matchName : "",
     matchPhoto : "",
@@ -47,11 +47,12 @@ app.post('/api/survey', (req,res)=>{
        }
    }
 
-   friendArray.push(userResp);
+    //send to array
+    //friendArray.push(userResp);
 
-    //res.json(bestMatch)
-   console.log(bestMatch)
+    console.log(bestMatch)
+    //send back match to survey.html
+    res.json(bestMatch)
 })
 
 };
-

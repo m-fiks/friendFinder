@@ -9,6 +9,18 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
 <body>
+<style>
+        .modal{
+                display:none;
+                height: 500px;
+                width: 500px;
+                margin: 200px 200px;
+         };
+        .close {
+                float:right;
+        };
+        
+</style>
 
 <!--header container jumbotron?-->
 <div class="container-fluid">
@@ -147,7 +159,27 @@
 <br><br>
 <button type="button" class="btn btn-primary" id="submitButton">Submit My Responses! </button>
 
+<!--modal-->
+<div id="match-modal" class="modal">
+        <div class="modal-content">
+                <div class="modal-header">
+                        <span class="close">&times;</span>
+                        <h2>Your new best friend:</h2>
+                </div>
+                <div class="modal-body">
+                        <p id="match-name"></p>
+                        <img id="match-photo" class="img-thumbnail">
+                </div>
+        </div>
+</div>
+
 <script>
+
+//close modal on clicking x
+
+$(".close").on("click", () => {
+        $("#match-modal").hide();
+});
 
 //get user values
 $("#submitButton").on("click", (e) =>{
@@ -175,6 +207,9 @@ $("#submitButton").on("click", (e) =>{
                 data: answers
         }).then((data) => {
                 console.log(data);
+                $("#match-modal").show();
+                $("#match-name").append(data.matchName);
+                $("#match-photo").attr("src", data.matchPhoto);
         })
 })
 
