@@ -48,7 +48,7 @@ app.post('/api/survey', (req,res)=>{
    }
 
     //send to array
-    //friendArray.push(userResp);
+    friendArray.push(userInput);
 
     console.log(bestMatch)
     //send back match to survey.html

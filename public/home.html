@@ -32,17 +32,17 @@ button{
 <body>
     <!--header container jumbotron?-->
 <div class="container-fluid">
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid" style="background-color:rgba(64, 224, 208, 0.842)">
         <h1 class="main-header">Find me a friend!</h1>
         <p class="normal-text">Take the survey to begin a new friendship</p>
         <button type="button" class ="btn btn-warning" id="surveybutton">Survey</button>
     </div>
 </div>
 
-
-<button type="button" class="btn btn-info" id="API">API List</button>
-<button type="button" class="btn btn-info" id="gh">GitHub Repo</button>
-
+<div class="buttons" style="margin-left: 20px;border: solid 1px peru; width: 215px; padding:5px;">
+    <button type="button" class="btn btn-info" id="API">API List</button>
+    <button type="button" class="btn btn-info" id="gh">GitHub Repo</button>
+</div>
 
 <script>
 
@@ -65,7 +65,7 @@ button{
         e.preventDefault();
         let currentlocation = window.location.origin;
         currentlocation += "/api/friends";
-        location.replace(currentlocation);
+        window.open(currentlocation);
     })
 
 </script>

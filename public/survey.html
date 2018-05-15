@@ -16,10 +16,9 @@ font-family: 'Megrim', cursive; */
 
 h1, button{
     font-family: 'Carrois Gothic SC', sans-serif;
-
 }
 
-.normal-text {
+.normal-text, .input-group-text, .custom-file-label {
     font-family: 'Roboto Condensed', sans-serif;
 }
 
@@ -28,10 +27,6 @@ h1, button{
         height: 500px;
         width: 500px;
         margin: 200px 200px;
-        };
-        
-.close {
-        float:right;
 };
 
 </style>
@@ -41,7 +36,7 @@ h1, button{
 
 <!--header container jumbotron?-->
 <div class="container-fluid">
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid" style="background-color:rgba(64, 224, 208, 0.842)">
         <h1>Find me a friend!</h1>
         <p class="normal-text">Take the survey to begin a new friendship</p>
         <button type="button" class ="btn btn-info" id="homebutton">Home</button>
@@ -49,7 +44,8 @@ h1, button{
 </div>
 
 <div class="container" id="surveyContainer">
-    <h2>About You</h2>
+   <div class="name-and-photo" style= "border: solid 1px peru; width: 300px; padding:5px;">
+     <h2 class="normal-text">About You</h2>
     <!--name and photo-->
     
      <div class="input-group mb-3">
@@ -70,9 +66,11 @@ h1, button{
           <label class="custom-file-label" for="photoUpload">Click 'choose file' button to upload file</label>
         </div>
       </div>
+</div>
 
-    <h2>Questions</h2>
-    <h4><strong>Question 1</strong></h4>
+<div class=questions style= "border: solid 1px peru; width: 300px; padding:10px;margin-top:10px;">
+    <h2 class="normal-text">Questions</h2>
+    <h5 class="normal-text"><strong>Question 1</strong></h4>
     <p>You are almost never late to appointments.</p>
     <form>
     <select class="selectpicker" data-placeholder="" id="question1">
@@ -83,7 +81,7 @@ h1, button{
         <option value="4">4</option>
         <option value="5">5 (Strongly Agree)</option>
     </select>
-    <h5><strong>Question 2</strong></h5>
+    <h5 class="normal-text"><strong>Question 2</strong></h5>
     <p>You are more of a cat person.</p>
     <select class="selectpicker" data-placeholder="" id="question2">
             <option value="">Choose an option</option>
@@ -93,7 +91,7 @@ h1, button{
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
     </select>
-    <h5><strong>Question 3</strong></h5>
+    <h5 class="normal-text"><strong>Question 3</strong></h5>
     <p>You are a fan of La Croix (sparkling water).</p>
     <select class="selectpicker" data-placeholder="" id="question3">
             <option value="">Choose an option</option>
@@ -103,7 +101,7 @@ h1, button{
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
     </select>
-    <h5><strong>Question 4</strong></h5>
+    <h5 class="normal-text"><strong>Question 4</strong></h5>
     <p>You think fitted sheets are unnecessary.</p>
     <select class="selectpicker" data-placeholder="" id="question4">
             <option value="">Choose an option</option>
@@ -113,7 +111,7 @@ h1, button{
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
     </select>
-    <h5><strong>Question 5</strong></h5>
+    <h5 class="normal-text"><strong>Question 5</strong></h5>
     <p>You find it difficult to speak loudly.</p>
     <select class="selectpicker" data-placeholder="" id="question5">
             <option value="">Choose an option</option>
@@ -123,7 +121,7 @@ h1, button{
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
     </select>
-    <h5><strong>Question 6</strong></h5>
+    <h5 class="normal-text"><strong>Question 6</strong></h5>
     <p>You have conflicting feelings about Grimes dating Elon Musk.</p>
     <select class="selectpicker" data-placeholder="" id="question6">
             <option value="">Choose an option</option>
@@ -133,7 +131,7 @@ h1, button{
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
     </select>
-    <h5><strong>Question 7</strong></h5>
+    <h5 class="normal-text"><strong>Question 7</strong></h5>
     <p>You floss your teeth before you brush them.</p>
     <select class="selectpicker" data-placeholder="" id="question7">
             <option value="">Choose an option</option>
@@ -143,7 +141,7 @@ h1, button{
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
     </select>
-    <h5><strong>Question 8</strong></h5>
+    <h5 class="normal-text"><strong>Question 8</strong></h5>
     <p>You procrastinate often.</p>
     <select class="selectpicker" data-placeholder="" id="question8">
             <option value="">Choose an option</option>
@@ -153,7 +151,7 @@ h1, button{
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
     </select>
-    <h5><strong>Question 9</strong></h5>
+    <h5 class="normal-text"><strong>Question 9</strong></h5>
     <p>You use Military Time.</p>
     <select class="selectpicker" data-placeholder="" id="question9">
             <option value="">Choose an option</option>
@@ -163,7 +161,7 @@ h1, button{
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
     </select>
-    <h5><strong>Question 10</strong></h5>
+    <h5 class="normal-text"><strong>Question 10</strong></h5>
     <p>Loki is still alive.</p>
     <select class="selectpicker" data-placeholder="" id="question10">
             <option value="">Choose an option</option>
@@ -182,7 +180,7 @@ h1, button{
 <div id="match-modal" class="modal">
         <div class="modal-content">
                 <div class="modal-header">
-                        <span class="close">&times;</span>
+                        <span id="close1" style="float:right">&times;</span>
                         <h2>Your new best friend:</h2>
                 </div>
                 <div class="modal-body">
@@ -191,11 +189,11 @@ h1, button{
                 </div>
         </div>
 </div>
-
+</div>
 <!--user val modal-->
 <div id="user-modal" class="modal">
         <div class="modal-content">
-                <span class="close">&times;</span>
+                <span id="close2" style="float:right">&times;</span>
                 <br>
                 <p>Please answer every question to move forward</p>
                 <br><br>
@@ -203,25 +201,6 @@ h1, button{
 </div>
 
 <script>
-
-
-//get user values
-let answers = {
-        name: $('#userName').val(),
-        photo: $('#photoUpload').val(),
-        questions: [
-                $('#question1').val(),
-                $('#question2').val(),
-                $('#question3').val(),
-                $('#question4').val(),
-                $('#question5').val(),
-                $('#question6').val(),
-                $('#question7').val(),
-                $('#question8').val(),
-                $('#question9').val(),
-                $('#question10').val()
-        ]
-}
 
 //bring user to api list
 $('#API').on("click", (e) => {
@@ -245,20 +224,45 @@ $('#homebutton').on("click", (e) =>{
         location.replace(currentlocation);
     })
 
-//close modal on clicking x
-$(".close").on("click", () => {
+//close modal on clicking x and bring to home page
+$("#close1").on("click", () => {
         $("#match-modal").hide();
-        $("#user-modal").hide();
+        let currentlocation = window.location.origin;
+        currentlocation += "/";
+        location.replace(currentlocation);
 });
 
-
+//closer user modal on x
+$("#close2").on("click", () => {
+        $("#user-modal").hide();
+});
 
 //send user values
 $("#submitButton").on("click", (e) =>{
         e.preventDefault();
+        //get user values
+        let answers = {
+                name: $('#userName').val(),
+                photo: $('#photoUpload').val(),
+                questions: [
+                        $('#question1').val(),
+                        $('#question2').val(),
+                        $('#question3').val(),
+                        $('#question4').val(),
+                        $('#question5').val(),
+                        $('#question6').val(),
+                        $('#question7').val(),
+                        $('#question8').val(),
+                        $('#question9').val(),
+                        $('#question10').val()
+                ]
+        }
+        console.log(answers);
+
         if (answers.name === ""|| answers.photo === "" || answers.questions.forEach((elem) => {elem = ""})){
                 $("#user-modal").show();
         }
+
         else {
         //console.log(answers);
         $.ajax({
@@ -270,6 +274,7 @@ $("#submitButton").on("click", (e) =>{
                 $("#match-modal").show();
                 $("#match-name").append(data.matchName);
                 $("#match-photo").attr("src", data.matchPhoto);
+                
         })
      };
 })
