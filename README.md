@@ -9,8 +9,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [Tech Used](#tech-used)
-- [Compatibility Finder](#Compatibility Finder)
-- [Commands](#Commands)
+- [Compatibility Finder](#Compatibility-Finder)
 - [License](#license)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
