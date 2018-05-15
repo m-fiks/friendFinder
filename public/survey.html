@@ -14,12 +14,28 @@ font-family: 'Merriweather', serif;
 font-family: 'Carrois Gothic SC', sans-serif;
 font-family: 'Megrim', cursive; */
 
+h1, button{
+    font-family: 'Carrois Gothic SC', sans-serif;
+
+}
+
+.jumbotron {
+    background-image: url('https://lh3.googleusercontent.com/f3xkuY5t0QTGUqmkxXNaUIUDR_UDM_Diw5FLMgBQxEE0oV0K-AuOL6HUOBX_kquGMCxCDRVKgvhvQT4xz2dvrRT2I-JKegEnbBAjnx8bbwXZ5ct7gxloy92cMJFyNuYrQwqtKs3hzg=w2400');
+    background-size: cover;
+   
+}
+
+.normal-text {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
 .modal{
         display:none;
         height: 500px;
         width: 500px;
         margin: 200px 200px;
         };
+        
 .close {
         float:right;
 };
@@ -33,7 +49,7 @@ font-family: 'Megrim', cursive; */
 <div class="container-fluid">
     <div class="jumbotron jumbotron-fluid">
         <h1>Find me a friend!</h1>
-        <p>Take the survey to begin a new friendship</p>
+        <p class="normal-text">Take the survey to begin a new friendship</p>
         <button type="button" class ="btn btn-info" id="homebutton">Home</button>
     </div>
 </div>
@@ -64,6 +80,7 @@ font-family: 'Megrim', cursive; */
     <h2>Questions</h2>
     <h4><strong>Question 1</strong></h4>
     <p>You are almost never late to appointments.</p>
+    <form>
     <select class="selectpicker" data-placeholder="" id="question1">
         <option value="">Choose an option</option>
         <option value="1">1 (Strongly Disagree)</option>
@@ -162,9 +179,10 @@ font-family: 'Megrim', cursive; */
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
     </select>
-</div>
+
 <br><br>
 <button type="button" class="btn btn-primary" id="submitButton">Submit My Responses! </button>
+</form>
 
 <!--modal-->
 <div id="match-modal" class="modal">
@@ -182,31 +200,61 @@ font-family: 'Megrim', cursive; */
 
 <script>
 
-//close modal on clicking x
 
+//get user values
+let answers = {
+        name: $('#userName').val(),
+        photo: $('#photoUpload').val(),
+        questions: [
+                $('#question1').val(),
+                $('#question2').val(),
+                $('#question3').val(),
+                $('#question4').val(),
+                $('#question5').val(),
+                $('#question6').val(),
+                $('#question7').val(),
+                $('#question8').val(),
+                $('#question9').val(),
+                $('#question10').val()
+        ]
+}
+
+//bring user to api list
+$('#API').on("click", (e) => {
+        e.preventDefault();
+        let currentlocation = window.location.origin;
+        currentlocation += "/api/friends";
+        location.replace(currentlocation);
+})
+
+//user to gh page
+$("#gh").on("click", (e) => {
+        e.preventDefault();
+        window.open("https://github.com/m-fiks/friendFinder")
+})
+
+//bring user to homepage when they click the button
+$('#homebutton').on("click", (e) =>{
+        e.preventDefault();
+        let currentlocation = window.location.origin;
+        currentlocation += "/";
+        location.replace(currentlocation);
+    })
+
+//close modal on clicking x
 $(".close").on("click", () => {
         $("#match-modal").hide();
 });
 
-//get user values
+
+
+//send user values
 $("#submitButton").on("click", (e) =>{
         e.preventDefault();
-        let answers = {
-                name: $('#userName').val(),
-                photo: $('#photoUpload').val(),
-                questions: [
-                        $('#question1').val(),
-                        $('#question2').val(),
-                        $('#question3').val(),
-                        $('#question4').val(),
-                        $('#question5').val(),
-                        $('#question6').val(),
-                        $('#question7').val(),
-                        $('#question8').val(),
-                        $('#question9').val(),
-                        $('#question10').val()
-                ]
+        if (answers.name === ""|| answers.photo === "" || answers.questions.forEach((elem) => {elem = ""})){
+                alert("YOU MUST ANSWER EVERY QUESTION")
         }
+        else {
         //console.log(answers);
         $.ajax({
                 type: "POST",
@@ -218,6 +266,7 @@ $("#submitButton").on("click", (e) =>{
                 $("#match-name").append(data.matchName);
                 $("#match-photo").attr("src", data.matchPhoto);
         })
+     };
 })
 
 
