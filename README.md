@@ -2,7 +2,7 @@
 
 **Friend Finder is an application that asks user to complete a survey in order to match them up with a friend based on their answers' compatibility. Friend finder utilizes Express on the back end and Bootstrap on the front end.**
 
-**Deployed: [link text]**
+**Deployed: [https://friend-finder93.herokuapp.com/]**
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
