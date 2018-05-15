@@ -1,6 +1,5 @@
 const path = require('path');
 const bodyParser = require('body-parser');
-const getClosest = require("get-closest");
 
 let friendArray = require('../data/friendos.js');
 // console.log(friendArray);
