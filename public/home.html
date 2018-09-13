@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>FRIEND FINDER</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Carrois+Gothic+SC|Megrim|Merriweather|Roboto+Condensed" rel="stylesheet">
 <style>
@@ -15,7 +14,6 @@ font-family: 'Carrois Gothic SC', sans-serif; */
 
 h1, button{
     font-family: 'Carrois Gothic SC', sans-serif;
-
 }
 
 button{
@@ -44,29 +42,30 @@ button{
     <button type="button" class="btn btn-info" id="gh">GitHub Repo</button>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 
     //user to gh page
-    $("#gh").on("click", (e) => {
-        e.preventDefault();
-        window.open("https://github.com/m-fiks/friendFinder")
-    })
+$("#gh").on("click", (e) => {
+    e.preventDefault();
+    window.open("https://github.com/m-fiks/friendFinder")
+})
 
-    //bring user to survey when they click the button
-    $('#surveybutton').on("click", (e) =>{
-        e.preventDefault();
-        let currentlocation = window.location.origin;
-        currentlocation += "/survey";
-        location.replace(currentlocation);
-    })
+//bring user to survey when they click the button
+$('#surveybutton').on("click", (e) =>{
+    e.preventDefault();
+    let currentlocation = window.location.origin;
+    currentlocation += "/survey";
+    location.replace(currentlocation);
+})
 
-    //bring user to api list
-    $('#API').on("click", (e) => {
-        e.preventDefault();
-        let currentlocation = window.location.origin;
-        currentlocation += "/api/friends";
-        window.open(currentlocation);
-    })
+//bring user to api list
+$('#API').on("click", (e) => {
+    e.preventDefault();
+    let currentlocation = window.location.origin;
+    currentlocation += "/api/friends";
+    window.open(currentlocation);
+})
 
 </script>
 

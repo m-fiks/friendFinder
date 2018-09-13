@@ -15,9 +15,8 @@ app.get('/api/friends', (req,res) => {
 
 //get survey data
 app.post('/api/survey', (req,res)=>{
-   //get user input
    let userInput = req.body;
-   console.log(userInput)
+   
    //target questions and convert to integers
    let userResp = userInput.questions;
    
@@ -45,12 +44,10 @@ app.post('/api/survey', (req,res)=>{
            bestMatch.matchPhoto = friendArray[i].photo;
        }
    }
-
-    //send to array
+   
     friendArray.push(userInput);
 
-    console.log(bestMatch)
-    //send back match to survey.html
+    //send back match
     res.json(bestMatch)
 })
 
