@@ -6,6 +6,9 @@ app = express();
 
 const PORT = process.env.PORT || 8080;
 
+//serve static files
+app.use(express.static("public"));
+
 //bodyparser
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());

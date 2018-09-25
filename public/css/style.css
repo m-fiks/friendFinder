@@ -1,0 +1,23 @@
+body{
+    background-color: #4ABDAC;
+}
+
+button{
+    margin: 5px;
+    /* float:right; */
+}
+.main-header {
+    font-family: 'Carrois Gothic SC', sans-serif;
+    background-color: rgba(245, 183, 59, 0.459);
+}
+
+.normal-text, .input-group-text, .custom-file-label {
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+.modal{
+        display:none;
+        height: 500px;
+        width: 500px;
+        margin: 200px 200px;
+};
