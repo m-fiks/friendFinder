@@ -24,19 +24,20 @@
 </div>
 
 <div class="container" id="surveyContainer">
-   <div class="name-and-photo">
-     <h2 class="normal-text">About You</h2>
-    <!--name and photo-->
-    
-     <div class="input-group mb-3">
-        <div class="input-group-prepend">
+    <div class="row">
+        <div class="col-md-4">
+        <div class="name-and-photo">
+        <h2 class="normal-text">About You</h2>
+        <!--name and photo-->
+        
+        <div class="input-group mb-3">
+                <div class="input-group-prepend">
                 <span class="input-group-text" id="nameInput">Enter your name</span>
-        </div>
+                </div>
                 <input type="text" id="userName" class="form-control" aria-label="name" aria-describedby="nameInput">
-     </div>
-
-    <br>
-
+        </div>
+   
+        <br>
     <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text">Upload a Photo of Yourself</span>
@@ -47,13 +48,15 @@
         </div>
       </div>
 </div>
+</div>
 
 <div class="questions">
+<div class="col-md-4">
     <h2 class="normal-text">Questions</h2>
     <h5 class="normal-text"><strong>Question 1</strong></h4>
     <p>You are almost never late to appointments.</p>
     <form>
-    <select class="selectpicker" data-placeholder="" id="question1">
+    <select class="selectpicker" data-placeholder="choose an option" id="question1">
         <option value="">Choose an option</option>
         <option value="1">1 (Strongly Disagree)</option>
         <option value="2">2</option>
@@ -101,6 +104,9 @@
             <option value="4">4</option>
             <option value="5">5 (Strongly Agree)</option>
     </select>
+</div>
+
+<div class="col-md-4 second-set">
     <h5 class="normal-text"><strong>Question 6</strong></h5>
     <p>You have conflicting feelings about Grimes dating Elon Musk.</p>
     <select class="selectpicker" data-placeholder="" id="question6">
@@ -155,6 +161,9 @@
 <br><br>
 <button type="button" class="btn btn-primary" id="submitButton">Submit My Responses! </button>
 </form>
+</div>
+</div>
+</div>
 
 <!--modal-->
 <div id="match-modal" class="modal">
